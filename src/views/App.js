@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.scss';
+import DemoComponent from './Example/DemoComponent';
+
+
 
 function App() {
   return (
@@ -17,6 +20,8 @@ function App() {
         >
           Learn React
         </a>
+
+        <DemoComponent />
       </header>
     </div>
   );
