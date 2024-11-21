@@ -1,5 +1,6 @@
 import React from 'react';
 import ChildComponent from './ChildComponent';
+import AddComponent from './AddComponent';
 
 
 /*
@@ -52,20 +53,7 @@ class DemoComponent extends React.Component {
             }
         ]
     }
-    handleChangeFirstName = (event) => {
-        this.setState({
-            firstName: event.target.value
-        })
-    }
-    handleChangeLastName = (event) => {
-        this.setState({
-            lastName: event.target.value
-        })
-    }
-    handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(this.state)
-    }
+
     render() {
         //keyword use to get value in state: this
         return (
@@ -87,30 +75,9 @@ class DemoComponent extends React.Component {
                 <div>
 
                     <h2>My Form</h2>
-                    <form>
-                        <label htmlFor="fname">First name:</label><br />
-                        <input
-                            type="text"
-                            value={this.state.firstName}
-                            // onChange={(event) => this.handleChangeFirstName(event)}
-                            onChange={this.handleChangeFirstName}
-                        />
-                        <br />
-                        <label htmlFor="lname">Last name:</label><br />
-                        <input
-                            type="text"
-                            value={this.state.lastName}
-                            onChange={this.handleChangeLastName}
-                        />
-                        <br />
-                        <br />
-                        <input
-                            type="button"
-                            value="Submit"
-                            onClick={this.handleSubmit}
-                        />
-                    </form>
+
                 </div>
+                <AddComponent />
                 <ChildComponent
                     name={this.state.firstName}
                     age={"28"}
