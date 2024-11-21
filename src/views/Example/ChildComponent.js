@@ -50,14 +50,24 @@ class ChildComponent extends React.Component {
     }
     render() {
         //keyword use to get value in state: this
-        console.log("props: ", this.props);
 
         //destructuring assignment - variable names must be the same as props.keys
-        let { name, age } = this.props;
+        let { name, age, address, jobs } = this.props;
         return (
             <>
                 <div>
-                    child component {name} - {age}
+                    child component {name} - {age} - {address}
+                </div>
+                <div className='jobs-list'>
+                    {
+                        jobs.map((item, index) => {
+                            return (
+                                <div key={item.id}>
+                                    {item.title} - {item.salary}
+                                </div>
+                            )
+                        })
+                    }
                 </div>
 
             </>

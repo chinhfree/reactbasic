@@ -33,7 +33,24 @@ class DemoComponent extends React.Component {
     // }
     state = {
         firstName: '',
-        lastName: ''
+        lastName: '',
+        jobs: [
+            {
+                id: 'job1',
+                title: 'IT',
+                salary: '$500'
+            },
+            {
+                id: 'job2',
+                title: 'tester',
+                salary: '$300'
+            },
+            {
+                id: 'job3',
+                title: 'Project Manager',
+                salary: '$1000'
+            }
+        ]
     }
     handleChangeFirstName = (event) => {
         this.setState({
@@ -95,8 +112,10 @@ class DemoComponent extends React.Component {
                     </form>
                 </div>
                 <ChildComponent
-                    name={"first_child"}
+                    name={this.state.firstName}
                     age={"28"}
+                    address={"Hanoi"}
+                    jobs={this.state.jobs}
                 />
             </>
 
