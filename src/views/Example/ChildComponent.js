@@ -50,10 +50,14 @@ class ChildComponent extends React.Component {
     }
     render() {
         //keyword use to get value in state: this
+        console.log("props: ", this.props);
+
+        //destructuring assignment - variable names must be the same as props.keys
+        let { name, age } = this.props;
         return (
             <>
                 <div>
-                    child component {this.props.name}
+                    child component {name} - {age}
                 </div>
 
             </>

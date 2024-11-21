@@ -68,9 +68,7 @@ class DemoComponent extends React.Component {
                 */}
 
                 <div>
-                    <ChildComponent name={"first_child"} />
-                    <ChildComponent name={"second_child"} />
-                    <ChildComponent name={"third_child"} />
+
                     <h2>My Form</h2>
                     <form>
                         <label htmlFor="fname">First name:</label><br />
@@ -96,7 +94,10 @@ class DemoComponent extends React.Component {
                         />
                     </form>
                 </div>
-
+                <ChildComponent
+                    name={"first_child"}
+                    age={"28"}
+                />
             </>
 
         )
