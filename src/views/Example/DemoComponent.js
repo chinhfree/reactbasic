@@ -78,6 +78,14 @@ class DemoComponent extends React.Component {
         })
     }
 
+    componentDidMount() {
+        console.log("Component did mount")
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+
+    }
+
     render() {
         //keyword use to get value in state: this
         return (
