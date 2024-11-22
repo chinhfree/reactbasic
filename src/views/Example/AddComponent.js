@@ -2,23 +2,41 @@ import React from 'react';
 
 class AddComponent extends React.Component {
     state = {
-        jobTitle: '',
+        title: '',
         salary: ''
     }
 
-    handleChangejobTitle = (event) => {
+    handleChangeTitle = (event) => {
         this.setState({
-            jobTitle: event.target.value
+            title: event.target.value
         })
     }
-    handleChangesalary = (event) => {
+    handleChangeSalary = (event) => {
         this.setState({
             salary: event.target.value
         })
     }
     handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(this.state)
+        event.preventDefault();
+        //validate data
+        if (!this.state.title || !this.state.salary) {
+            alert('Missing')
+            return
+        }
+        console.log(this.state);
+        //call add new job via props from parent 
+        this.props.addNewJob({
+            id: parseInt(Math.random(), 100),
+            title: this.state.title,
+            salary: this.state.salary
+        }
+        );
+
+        //clear field
+        this.setState({
+            title: '',
+            salary: ''
+        })
     }
     render() {
         return (
@@ -26,16 +44,16 @@ class AddComponent extends React.Component {
                 <label htmlFor="fname">Job Title:</label><br />
                 <input
                     type="text"
-                    value={this.state.jobTitle}
-                    // onChange={(event) => this.handleChangejobTitle(event)}
-                    onChange={this.handleChangejobTitle}
+                    value={this.state.title}
+                    // onChange={(event) => this.handleChangetitle(event)}
+                    onChange={this.handleChangeTitle}
                 />
                 <br />
                 <label htmlFor="lname">Salary:</label><br />
                 <input
                     type="text"
                     value={this.state.salary}
-                    onChange={this.handleChangesalary}
+                    onChange={this.handleChangeSalary}
                 />
                 <br />
                 <br />

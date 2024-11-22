@@ -54,6 +54,30 @@ class DemoComponent extends React.Component {
         ]
     }
 
+    addNewJob = (job) => {
+        //js basic
+        let currentJobs = this.state.jobs;
+        currentJobs.push(job);
+        this.setState({
+            jobs: currentJobs
+        })
+
+
+        // advance - copy all elements of a n array ...
+        this.setState({
+            jobs: [...this.state.jobs, job]
+        })
+    }
+    deleteJob = (job) => {
+
+        // console.log(job)
+        let currentJobs = this.state.jobs;
+        currentJobs = currentJobs.filter(item => item.id !== job.id);
+        this.setState({
+            jobs: currentJobs
+        })
+    }
+
     render() {
         //keyword use to get value in state: this
         return (
@@ -77,12 +101,13 @@ class DemoComponent extends React.Component {
                     <h2>My Form</h2>
 
                 </div>
-                <AddComponent />
+                <AddComponent addNewJob={this.addNewJob} />
                 <ChildComponent
                     name={this.state.firstName}
                     age={"28"}
                     address={"Hanoi"}
                     jobs={this.state.jobs}
+                    deleteJob={this.deleteJob}
                 />
             </>
 
