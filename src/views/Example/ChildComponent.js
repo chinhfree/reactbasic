@@ -1,4 +1,5 @@
 import React from 'react';
+import './Demo.scss';
 
 
 /*
@@ -28,8 +29,6 @@ class ChildComponent extends React.Component {
 
             // <>
             //     {showJobs === false && <button onClick={this.handleShowHide}>Show</button>}
-
-
             //     {showJobs &&
             //         <>
             //             <div className='jobs-list'>
@@ -46,15 +45,13 @@ class ChildComponent extends React.Component {
             //             <button onClick={() => this.handleShowHide()}>Hide</button>
             //         </>
             //     }
-
-
-
             // </>
 
             //ternary operator
             <>
                 {showJobs === false ?
-                    <button onClick={this.handleShowHide}>Show</button>
+                    // inline css
+                    <button onClick={this.handleShowHide} className="btn-show" style={{ fontSize: 20 }}>Show</button>
                     :
                     <>
                         <div className='jobs-list'>
