@@ -1,0 +1,25 @@
+.view{
+    max-width: 400px;
+    margin: auto;
+    .list-todo-child{
+        &:first-child{
+            // background-color: red;
+            margin-top: 10px;
+        }
+        border-bottom: 1px solid gray;
+        margin: 10px;
+        padding: 5px;
+    }
+    button{
+        padding: 10px;
+        margin: 0px 5px 0 5px;
+        min-width: 70px;
+    }
+    // .list-todo-child:first-child{
+    //     margin-top: 10px;
+    //     color: red;
+    // }
+}
+button{
+    cursor: pointer;
+}
