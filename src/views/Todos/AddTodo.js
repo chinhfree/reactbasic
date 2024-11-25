@@ -1,9 +1,9 @@
 import React from 'react';
 import './ListTodos.scss';
-import { Bounce, ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
-class AddTodo extends React.Component{
+class AddTodo extends React.Component {
 
     state = {
         title: ''
@@ -17,7 +17,7 @@ class AddTodo extends React.Component{
     }
 
     handleOnClickAdd = () => {
-        if (!this.state.title){
+        if (!this.state.title) {
             alert('empty')
             return
         }
@@ -32,13 +32,13 @@ class AddTodo extends React.Component{
         toast.success('Success!')
     }
 
-    render(){
+    render() {
         let title = this.state.title;
         return (
             <div className="add">
-                        <input type="text" value={title} onChange={(event)=> this.handleOnChangeValue(event)}/>
-                        <button type="button" onClick={this.handleOnClickAdd} >Add</button>
-                    </div>
+                <input type="text" value={title} onChange={(event) => this.handleOnChangeValue(event)} />
+                <button type="button" onClick={this.handleOnClickAdd} >Add</button>
+            </div>
         )
     }
 }
