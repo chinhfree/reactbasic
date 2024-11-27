@@ -12,6 +12,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ListUsers from './User/ListUsers';
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <header className="App-header">
           <Nav />
           <img src={logo} className="App-logo" alt="logo" />
+
           {/* <Home /> */}
           {/* <DemoComponent /> */}
           {/* {<RootComponent />} */}
@@ -35,6 +37,9 @@ function App() {
             </Route>
             <Route path="/todo">
               <RootComponent />
+            </Route>
+            <Route path="/user">
+              <ListUsers />
             </Route>
           </Switch>
         </header>

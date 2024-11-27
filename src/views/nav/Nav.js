@@ -13,6 +13,7 @@ class Nav extends React.Component {
                 <NavLink to="/" activeClassName="active" exact={true}>Home</NavLink>
                 <NavLink to="/demo" activeClassName="active">Demo</NavLink>
                 <NavLink to="/todo" activeClassName="active">Todos</NavLink>
+                <NavLink to="/user" activeClassName="active">Users</NavLink>
                 {/* <a className="active" href="/">Home</a>
                 <a href="/demo">Demo</a>
                 <a href="/todo">Todos</a> */}
